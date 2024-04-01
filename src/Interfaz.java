@@ -153,6 +153,7 @@ public class Interfaz extends javax.swing.JFrame {
         botonprov.setBackground(new java.awt.Color(0, 153, 255));
         botonprov.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         botonprov.setForeground(new java.awt.Color(255, 255, 255));
+        botonprov.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mensajero.png"))); // NOI18N
         botonprov.setText("PROVEEDORES");
         botonprov.setBorder(null);
         botonprov.addActionListener(new java.awt.event.ActionListener() {
