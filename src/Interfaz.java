@@ -1,4 +1,5 @@
 
+import vista.MenuVentas;
 import vista.MenuProv;
 import vista.MenuEmple;
 import vista.MenuProduc;
