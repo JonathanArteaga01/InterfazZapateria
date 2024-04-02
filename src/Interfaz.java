@@ -1,4 +1,5 @@
 
+import vista.MenuEmple;
 import vista.MenuProduc;
 import vista.MenuClientes;
 import java.awt.BorderLayout;
