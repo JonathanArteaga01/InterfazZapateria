@@ -38,9 +38,11 @@ public class MenuClientes extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(592, 390));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        panelclientes.setBackground(new java.awt.Color(204, 255, 204));
         panelclientes.setPreferredSize(new java.awt.Dimension(658, 0));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/trabajo-en-equipo.png"))); // NOI18N
         jLabel1.setText("REGISTRO DE CLIENTES:");
 
         jLabel2.setText("CORREO ELECTRONICO:");
@@ -87,14 +89,14 @@ public class MenuClientes extends javax.swing.JPanel {
                     .addGroup(panelclientesLayout.createSequentialGroup()
                         .addGap(279, 279, 279)
                         .addComponent(jButton1)))
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelclientesLayout.setVerticalGroup(
             panelclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelclientesLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
