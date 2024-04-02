@@ -1,3 +1,5 @@
+package vista;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
@@ -46,7 +48,6 @@ public class MenuProduc extends javax.swing.JPanel {
         panelclientes.setPreferredSize(new java.awt.Dimension(658, 0));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("REGISTRO DE PRODUCTOS:");
 
         jLabel2.setText("NOMBRE DEL PRODUCTO:");
