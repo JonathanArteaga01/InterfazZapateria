@@ -1,6 +1,12 @@
 
+import vista.MenuEmple;
+import vista.MenuProduc;
+import vista.MenuProv;
+import vista.MenuVentas;
+import vista.MenuClientes;
 import java.awt.BorderLayout;
 import java.net.ContentHandlerFactory;
+import vista.MenuStock;
 
 
 /*
@@ -21,9 +27,7 @@ public class Interfaz extends javax.swing.JFrame {
      */
     public Interfaz() {
         initComponents();
-        // Obtener la URL de la imagen
-    java.net.URL imageUrl = getClass().getResource("logozapateria.jpg");
-    System.out.println("URL de la imagen: " + imageUrl);
+        
         
         cargarContenidoPrincipal();
      
@@ -53,19 +57,15 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         botonclientes = new javax.swing.JButton();
         botonproduc = new javax.swing.JButton();
+        botonStock = new javax.swing.JButton();
         botonprov = new javax.swing.JButton();
         botonempl = new javax.swing.JButton();
         botonventas = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel3 = new javax.swing.JPanel();
-        botonclientes1 = new javax.swing.JButton();
-        botonproduc1 = new javax.swing.JButton();
-        botonprov1 = new javax.swing.JButton();
-        botonempl1 = new javax.swing.JButton();
-        botonventas1 = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,6 +131,7 @@ public class Interfaz extends javax.swing.JFrame {
         botonclientes.setBackground(new java.awt.Color(0, 153, 255));
         botonclientes.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         botonclientes.setForeground(new java.awt.Color(255, 255, 255));
+        botonclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logocliente_3.png"))); // NOI18N
         botonclientes.setText("CLIENTES");
         botonclientes.setBorder(null);
         botonclientes.addActionListener(new java.awt.event.ActionListener() {
@@ -142,11 +143,24 @@ public class Interfaz extends javax.swing.JFrame {
         botonproduc.setBackground(new java.awt.Color(0, 153, 255));
         botonproduc.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         botonproduc.setForeground(new java.awt.Color(255, 255, 255));
+        botonproduc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zapato-inteligente.png"))); // NOI18N
         botonproduc.setText("PRODUCTOS");
         botonproduc.setBorder(null);
         botonproduc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonproducActionPerformed(evt);
+            }
+        });
+
+        botonStock.setBackground(new java.awt.Color(0, 153, 255));
+        botonStock.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        botonStock.setForeground(new java.awt.Color(255, 255, 255));
+        botonStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inventario-disponible.png"))); // NOI18N
+        botonStock.setText("STOCK");
+        botonStock.setBorder(null);
+        botonStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonStockActionPerformed(evt);
             }
         });
 
@@ -188,103 +202,13 @@ public class Interfaz extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 255));
-
-        botonclientes1.setBackground(new java.awt.Color(0, 153, 255));
-        botonclientes1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        botonclientes1.setForeground(new java.awt.Color(255, 255, 255));
-        botonclientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logocliente_3.png"))); // NOI18N
-        botonclientes1.setText("CLIENTES");
-        botonclientes1.setBorder(null);
-        botonclientes1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonclientes1ActionPerformed(evt);
-            }
-        });
-
-        botonproduc1.setBackground(new java.awt.Color(0, 153, 255));
-        botonproduc1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        botonproduc1.setForeground(new java.awt.Color(255, 255, 255));
-        botonproduc1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zapato-inteligente.png"))); // NOI18N
-        botonproduc1.setText("PRODUCTOS");
-        botonproduc1.setBorder(null);
-        botonproduc1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonproduc1ActionPerformed(evt);
-            }
-        });
-
-        botonprov1.setBackground(new java.awt.Color(0, 153, 255));
-        botonprov1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        botonprov1.setForeground(new java.awt.Color(255, 255, 255));
-        botonprov1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mensajero.png"))); // NOI18N
-        botonprov1.setText("PROVEEDORES");
-        botonprov1.setBorder(null);
-        botonprov1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonprov1ActionPerformed(evt);
-            }
-        });
-
-        botonempl1.setBackground(new java.awt.Color(0, 153, 255));
-        botonempl1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        botonempl1.setForeground(new java.awt.Color(255, 255, 255));
-        botonempl1.setText("EMPLEADOS");
-        botonempl1.setBorder(null);
-        botonempl1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonempl1ActionPerformed(evt);
-            }
-        });
-
-        botonventas1.setBackground(new java.awt.Color(0, 153, 255));
-        botonventas1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        botonventas1.setForeground(new java.awt.Color(255, 255, 255));
-        botonventas1.setText("VENTAS");
-        botonventas1.setBorder(null);
-        botonventas1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonventas1ActionPerformed(evt);
-            }
-        });
-
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(botonempl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(botonprov1, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-            .addComponent(botonproduc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(botonclientes1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(botonventas1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator2)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(botonclientes1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(botonproduc1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(botonprov1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(botonempl1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(botonventas1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -300,20 +224,20 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator3)
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator5)
+                    .addComponent(jSeparator2))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(botonStock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(botonclientes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(12, 12, 12)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonproduc, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -327,12 +251,11 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonventas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonStock, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -433,25 +356,16 @@ public class Interfaz extends javax.swing.JFrame {
        cargarContenidoPrincipal();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void botonclientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonclientes1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonclientes1ActionPerformed
+    private void botonStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonStockActionPerformed
+           MenuStock st1 = new MenuStock();
+        st1.setSize(600, 400);
+        st1.setLocation(0, 0);
 
-    private void botonproduc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonproduc1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonproduc1ActionPerformed
-
-    private void botonprov1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonprov1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonprov1ActionPerformed
-
-    private void botonempl1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonempl1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonempl1ActionPerformed
-
-    private void botonventas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonventas1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonventas1ActionPerformed
+        contenido.removeAll();
+        contenido.add(st1,BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }//GEN-LAST:event_botonStockActionPerformed
 
     private void cargarContenidoPrincipal() {
     contenido.removeAll();
@@ -495,26 +409,22 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonStock;
     private javax.swing.JButton botonclientes;
-    private javax.swing.JButton botonclientes1;
     private javax.swing.JButton botonempl;
-    private javax.swing.JButton botonempl1;
     private javax.swing.JButton botonproduc;
-    private javax.swing.JButton botonproduc1;
     private javax.swing.JButton botonprov;
-    private javax.swing.JButton botonprov1;
     private javax.swing.JButton botonventas;
-    private javax.swing.JButton botonventas1;
     private javax.swing.JPanel contenido;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel labeluser;
     private javax.swing.JPanel lineaarriba;
     // End of variables declaration//GEN-END:variables
