@@ -1,4 +1,4 @@
-import vista.Interfaz;
+
 import javax.swing.*;
 import java.io.*;
 import java.util.Scanner;
