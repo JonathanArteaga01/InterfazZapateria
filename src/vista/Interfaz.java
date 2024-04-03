@@ -1,3 +1,5 @@
+package vista;
+
 
 import vista.MenuEmple;
 import vista.MenuProduc;
