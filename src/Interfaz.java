@@ -5,7 +5,6 @@ import vista.MenuProv;
 import vista.MenuVentas;
 import vista.MenuClientes;
 import java.awt.BorderLayout;
-import java.net.ContentHandlerFactory;
 import vista.MenuStock;
 
 

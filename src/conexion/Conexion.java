@@ -1,36 +1,46 @@
 
-import javax.swing.*;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
 
-    private String bd_name = "BD_Prueba1";
-    private String url =  "jdbc:mysql://localhost:3306/" + bd_name;
-    private String user = "root";
-    private String pswd = "Diana24183";
-    private String driver = "com.mysql.cj.jdbc.Driver";
-    private Connection conn;
-
-    public Conexion() {
-        try {
-            Class.forName(driver);
-            conn = DriverManager.getConnection(url, user, pswd);
-            JOptionPane.showMessageDialog( null, "Conexión establecida correctamente");
-        } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al establecer la conexión" + e.getMessage());
-        }
-}
-public Connection getConn(){
-    return conn;
-}
-    public void closeConn() {
-        try {
-            conn.close();
-            JOptionPane.showMessageDialog( null, "Conexión cerrada correctamente");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al cerrar la conexión " + e.getMessage());
-        }
+    private static final String bd = "BD_Prueba1";
+    private static final String usuario = "root";
+    private static final String password = "Diana24183";
+    private static final String host = "localhost";
+    private static final String puerto = "3306";
+    private final String url;
+    
+    
+    private Connection conexion;
+    
+    public Conexion(){
+    url = "jdbc:mysql://" + host + ":" + puerto + "/" + bd;
     }
+   public boolean abrir(){
+   try{
+       Class.forName("com.mysql.cj.jdbc.Driver");
+       conexion = DriverManager.getConnection(url,usuario, password);
+       return true;
+   }catch (SQLException | ClassNotFoundException e){
+        return false;
+               }
+   }
+    
+    
+public Connection obtener(){
+
+    return conexion;
 }
+public boolean cerrar(){
+    try{
+    conexion.close();
+    return true;
+    }catch (SQLException e){
+        return false;
+    }    
+  }
+}
+    
